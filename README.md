@@ -1,1 +1,1 @@
-# Automation Developer for YouTube Video Processing & Scheduled Uploads
+# YouTube Video Processing & Scheduled Uploads Automation
