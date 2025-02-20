@@ -1,0 +1,17 @@
+file_path,title,description,tags,category,privacy_status,thumbnail_path,publish_time,made_for_kids
+data/videos/python1.mp4,"Python for Beginners - Part 1","Learn Python programming from scratch!
+Topics covered:
+
+Variables
+Data Types
+Basic Operations
+
+#programming #python #tutorial","programming,python,tutorial,beginners",27,private,data/thumbnails/python1.jpg,2024-02-20T15:00:00,false
+data/videos/python2.mp4,"Python for Beginners - Part 2","Continue your Python journey!
+Topics covered:
+
+Functions
+Classes
+Objects
+
+#programming #python #tutorial","programming,python,tutorial,beginners",27,private,data/thumbnails/python2.jpg,2024-02-21T15:00:00,false

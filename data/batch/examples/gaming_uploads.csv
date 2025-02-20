@@ -1,0 +1,5 @@
+file_path,title,description,tags,category,privacy_status,thumbnail_path,publish_time
+data/videos/gameplay1.mp4,"Epic Gameplay Part 1","Join me in this epic gaming session!
+#gaming #walkthrough","gaming,walkthrough,epic",20,private,data/thumbnails/game1.jpg,2024-02-20T15:00:00
+data/videos/gameplay2.mp4,"Epic Gameplay Part 2","The adventure continues!
+#gaming #walkthrough","gaming,walkthrough,epic",20,private,data/thumbnails/game2.jpg,2024-02-21T15:00:00

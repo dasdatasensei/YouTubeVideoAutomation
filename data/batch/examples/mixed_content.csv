@@ -1,0 +1,5 @@
+file_path,title,description,tags,category,privacy_status,thumbnail_path,publish_time,language,license
+data/videos/vlog1.mp4,"Daily Vlog - Coding Life","A day in the life of a programmer!
+#vlog #coding #lifestyle","vlog,coding,lifestyle,programming",22,private,data/thumbnails/vlog1.jpg,2024-02-20T15:00:00,en,youtube
+https://youtube.com/watch?v=VIDEO_ID,"Updated Tutorial","Adding end screen to existing tutorial.
+#tutorial #updated","tutorial,coding,updated",27,private,,2024-02-21T15:00:00,en,youtube
