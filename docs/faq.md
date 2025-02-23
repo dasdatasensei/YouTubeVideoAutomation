@@ -248,8 +248,8 @@ youtube-processor --debug
 
 - Documentation: [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs)
 - Discord: [Join Community](https://discord.gg/thedatasensei)
-- GitHub: [Issues](https://github.com/dasdatasensei/YouTubeVideoAutomation/issues)
-- Email: support@thedatasensei.com
+- GitHub: [Issue Tracker](https://github.com/dasdatasensei/YouTubeVideoAutomation/issues)
+- Email: [Support](mailto:jody@thedatasensei.com)
 
 ### Do you offer custom solutions?
 

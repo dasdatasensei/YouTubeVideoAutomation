@@ -65,8 +65,8 @@ pytest
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 
 # Create virtual environment
 python -m venv .venv
@@ -94,7 +94,7 @@ class Settings(BaseSettings):
 ## Project Structure
 
 ```
-youtube-automation/
+YouTubeVideoAutomation/
 ├── src/
 │   └── youtube_processor/
 │       ├── core/               # Core business logic

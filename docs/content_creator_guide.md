@@ -216,9 +216,9 @@ The tool helps you:
 
 - 📚 [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs)
 - 💬 [Community Forum](https://github.com/dasdatasensei/YouTubeVideoAutomation/discussions)
-- 📧 [Email Support](mailto:support@thedatasensei.com)
+- 📧 [Email Support](mailto:jody@thedatasensei.com)
 - 📱 [Discord Server](https://discord.gg/thedatasensei)
 
 ---
 
-Remember to check our [Templates](docs/templates/) for more examples and [Best Practices](docs/best_practices.md) for advanced tips!
+Remember to check our [Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs/templates/) for more examples and [Best Practices](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/best_practices.md) for advanced tips!

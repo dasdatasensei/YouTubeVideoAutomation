@@ -22,8 +22,8 @@ Download our installer:
 ### For Developers
 
 ```bash
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 python -m venv .venv
 source .venv/bin/activate  # Windows: .\.venv\Scripts\activate
 pip install -e ".[dev]"
@@ -64,8 +64,8 @@ pip install -e ".[dev]"
    ```bash
    # Open Command Prompt as Administrator
    cd %USERPROFILE%\Documents
-   git clone https://github.com/yourusername/youtube-automation.git
-   cd youtube-automation
+   git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+   cd YouTubeVideoAutomation
    python -m venv .venv
    .venv\Scripts\activate
    pip install -e ".[dev]"
@@ -90,8 +90,8 @@ pip install -e ".[dev]"
 brew install python ffmpeg git
 
 # Install application
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
@@ -121,8 +121,8 @@ pip install -e ".[dev]"
 
 3. **Install Application**
    ```bash
-   git clone https://github.com/yourusername/youtube-automation.git
-   cd youtube-automation
+   git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+   cd YouTubeVideoAutomation
    python3 -m venv .venv
    source .venv/bin/activate
    pip install -e ".[dev]"
@@ -138,8 +138,8 @@ sudo apt update
 sudo apt install python3-pip python3-venv ffmpeg git
 
 # Install application
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
@@ -152,8 +152,8 @@ pip install -e ".[dev]"
 sudo dnf install python3-pip python3-virtualenv ffmpeg git
 
 # Install application
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
@@ -166,8 +166,8 @@ pip install -e ".[dev]"
 sudo pacman -S python python-pip python-virtualenv ffmpeg git
 
 # Install application
-git clone https://github.com/yourusername/youtube-automation.git
-cd youtube-automation
+git clone https://github.com/dasdatasensei/YouTubeVideoAutomation.git
+cd YouTubeVideoAutomation
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"

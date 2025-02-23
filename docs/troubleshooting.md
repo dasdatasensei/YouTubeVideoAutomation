@@ -1,6 +1,7 @@
 # Troubleshooting Guide
 
 ## Table of Contents
+
 - [Quick Solutions](#quick-solutions)
 - [Installation Issues](#installation-issues)
 - [Authentication Problems](#authentication-problems)
@@ -15,33 +16,41 @@
 ### Top 5 Common Issues
 
 1. **OAuth Error**
+
    ```
    Error: Token expired or invalid
    ```
+
    - Delete `config/token.json`
    - Run `youtube-processor configure`
    - Re-authenticate
 
 2. **FFmpeg Not Found**
+
    ```
    Error: [Errno 2] No such file or directory: 'ffmpeg'
    ```
+
    - Check FFmpeg installation
    - Verify PATH settings
    - Reinstall FFmpeg if needed
 
 3. **Upload Failed**
+
    ```
    Error: Failed to upload video
    ```
+
    - Check internet connection
    - Verify file permissions
    - Ensure sufficient quota
 
 4. **CSV Format Error**
+
    ```
    Error: CSV validation failed
    ```
+
    - Check column names
    - Verify date formats
    - Remove special characters
@@ -59,17 +68,21 @@
 ### Python Environment Problems
 
 1. **Python Not Found**
+
    ```bash
    # Check Python version
    python --version
    python3 --version
    ```
+
    Solution:
+
    - Reinstall Python
    - Add to PATH
    - Use correct command for OS
 
 2. **Virtual Environment Issues**
+
    ```bash
    # Create new environment
    python -m venv .venv --clear
@@ -92,15 +105,19 @@
 ### OAuth2.0 Issues
 
 1. **Invalid Client Secrets**
+
    ```
    Error: The OAuth client was not found
    ```
+
    Solution:
+
    - Download new credentials
    - Place in correct location
    - Verify file permissions
 
 2. **Token Refresh Failed**
+
    ```python
    # Check token status
    youtube-processor token-info
@@ -118,6 +135,7 @@
    - Update OAuth consent screen
 
 ### Code Examples
+
 ```python
 # Manual token refresh
 from google.oauth2.credentials import Credentials
@@ -133,16 +151,20 @@ if credentials.expired:
 ### FFmpeg Problems
 
 1. **Format Compatibility**
+
    ```bash
    # Check video format
    ffmpeg -i video.mp4
    ```
+
    Solution:
+
    - Convert to compatible format
    - Update FFmpeg
    - Check codec support
 
 2. **Processing Failed**
+
    ```python
    # Enable debug logging
    import logging
@@ -155,6 +177,7 @@ if credentials.expired:
    - Verify file permissions
 
 ### Debugging Steps
+
 ```bash
 # Test FFmpeg installation
 ffmpeg -version
@@ -171,6 +194,7 @@ ffmpeg -i input.mp4 -t 10 test_output.mp4
 ### Network Issues
 
 1. **Connection Timeout**
+
    ```python
    # Implement retry logic
    from tenacity import retry, stop_after_attempt
@@ -181,6 +205,7 @@ ffmpeg -i input.mp4 -t 10 test_output.mp4
    ```
 
 2. **Quota Exceeded**
+
    - Check quota usage
    - Implement rate limiting
    - Request quota increase
@@ -191,6 +216,7 @@ ffmpeg -i input.mp4 -t 10 test_output.mp4
    - Check network stability
 
 ### API Errors
+
 ```python
 # Handle API errors
 try:
@@ -207,6 +233,7 @@ except HttpError as e:
 ### CSV Issues
 
 1. **Invalid Format**
+
    ```python
    # Validate CSV
    import pandas as pd
@@ -217,6 +244,7 @@ except HttpError as e:
    ```
 
 2. **Path Problems**
+
    - Use absolute paths
    - Check file existence
    - Verify permissions
@@ -227,6 +255,7 @@ except HttpError as e:
    - Space out uploads
 
 ### Error Handling
+
 ```python
 def process_batch(csv_file):
     errors = []
@@ -245,15 +274,16 @@ def process_batch(csv_file):
 
 ### Error Code Reference
 
-| Code | Message | Solution |
-|------|----------|----------|
-| AUTH001 | Token expired | Refresh token |
-| PROC001 | Processing failed | Check FFmpeg |
-| UPLD001 | Upload failed | Check network |
-| BATCH001 | CSV invalid | Validate format |
-| QUOTA001 | Quota exceeded | Wait/increase |
+| Code     | Message           | Solution        |
+| -------- | ----------------- | --------------- |
+| AUTH001  | Token expired     | Refresh token   |
+| PROC001  | Processing failed | Check FFmpeg    |
+| UPLD001  | Upload failed     | Check network   |
+| BATCH001 | CSV invalid       | Validate format |
+| QUOTA001 | Quota exceeded    | Wait/increase   |
 
 ### Debugging Commands
+
 ```bash
 # Check system status
 youtube-processor diagnose
@@ -270,6 +300,7 @@ youtube-processor verify-installation
 ### Logging
 
 1. **Enable Debug Logs**
+
    ```python
    # Set environment variable
    export YOUTUBE_PROCESSOR_LOG_LEVEL=DEBUG
@@ -280,11 +311,13 @@ youtube-processor verify-installation
    ```
 
 2. **Log File Location**
+
    ```
    logs/youtube_processor.log
    ```
 
 3. **Log Analysis**
+
    ```bash
    # View recent errors
    tail -f logs/youtube_processor.log | grep ERROR
@@ -296,11 +329,13 @@ youtube-processor verify-installation
 ### Development Tools
 
 1. **Interactive Debug Mode**
+
    ```bash
    youtube-processor --debug process video.mp4
    ```
 
 2. **Network Debugging**
+
    ```python
    # Enable request logging
    import httplib2
@@ -308,6 +343,7 @@ youtube-processor verify-installation
    ```
 
 3. **Profile Performance**
+
    ```python
    import cProfile
 
@@ -317,6 +353,7 @@ youtube-processor verify-installation
 ### Recovery Steps
 
 1. **Clean Start**
+
    ```bash
    # Remove all temporary files
    youtube-processor clean-all
@@ -329,6 +366,7 @@ youtube-processor verify-installation
    ```
 
 2. **Backup/Restore**
+
    ```bash
    # Backup configuration
    youtube-processor backup-config
@@ -338,6 +376,7 @@ youtube-processor verify-installation
    ```
 
 3. **Emergency Stop**
+
    ```bash
    # Stop all processes
    youtube-processor emergency-stop
@@ -347,14 +386,39 @@ youtube-processor verify-installation
    ```
 
 ## Additional Resources
+
 - [Error Code Reference](error_codes.md)
 - [FFmpeg Troubleshooting](ffmpeg_guide.md)
 - [Network Issues](network_guide.md)
 - [API Quotas](quotas.md)
 
----
+## Getting Help
 
-Still having issues? Contact support:
-- Discord: [Join Server](https://discord.gg/youtube-automation)
-- GitHub: [Open Issue](https://github.com/yourusername/youtube-automation/issues)
-- Email: support@ythedatasensei.com
+### Support Resources
+
+- 📚 [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs)
+- 💬 [Community Forum](https://github.com/dasdatasensei/YouTubeVideoAutomation/discussions)
+- 🐛 [Issue Tracker](https://github.com/dasdatasensei/YouTubeVideoAutomation/issues)
+- 📧 [Email Support](mailto:jody@thedatasensei.com)
+- 📱 [Discord Server](https://discord.gg/thedatasensei)
+
+### Debug Information
+
+When reporting issues, please include:
+
+1. Error message and stack trace
+2. System information:
+   ```bash
+   youtube-processor debug-info
+   ```
+3. Steps to reproduce
+4. Log files from:
+   ```
+   ~/.youtube-automation/logs/
+   ```
+
+### Contact Information
+
+- Technical Support: [jody@thedatasensei.com](mailto:jody@thedatasensei.com)
+- Discord: [Join Community](https://discord.gg/thedatasensei)
+- GitHub: [Open Issue](https://github.com/dasdatasensei/YouTubeVideoAutomation/issues/new)
