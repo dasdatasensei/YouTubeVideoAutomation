@@ -8,17 +8,15 @@ Year: 2025
 
 import csv
 import io
-import tempfile
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from fastapi import BackgroundTasks, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
 
 from main import process_video
-from src.youtube_processor.models import BatchProcessingJob
 
 app = FastAPI(
     title="YouTube Video Automation API",
@@ -30,7 +28,6 @@ app = FastAPI(
         "email": "jody@thedatasensei.com",
     },
 )
-
 
 # Constants
 TEMPLATE_PATH = Path("templates/batch_upload_template.csv")
@@ -63,11 +60,12 @@ class BatchProcessingResponse(BaseModel):
 
 
 # Store batch processing jobs
-batch_jobs = {}
+batch_jobs: Dict[str, BatchProcessingResponse] = {}
 
 
 async def process_batch(
-    job_id: str, videos: List[BatchVideoRequest], background_tasks: BackgroundTasks
+    job_id: str,
+    videos: List[BatchVideoRequest],
 ) -> None:
     """Process a batch of videos in the background."""
     job = batch_jobs[job_id]
@@ -92,7 +90,7 @@ async def process_batch(
 
 
 @app.get("/", response_class=HTMLResponse)
-async def root():
+async def root() -> str:
     """Root endpoint with user-friendly HTML interface."""
     return """
     <!DOCTYPE html>
@@ -298,7 +296,7 @@ async def process_video_endpoint(
     publish_time: str = Form(...),
     file: Optional[UploadFile] = None,
     youtube_url: Optional[str] = Form(None),
-):
+) -> Dict[str, str]:
     """Process and upload a single video."""
     try:
         # Handle file upload
@@ -333,36 +331,39 @@ async def process_video_endpoint(
         return {"status": "success", "message": "Video processed successfully"}
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/batch/process")
 async def batch_process_videos(
-    videos: List[BatchVideoRequest], background_tasks: BackgroundTasks
+    videos: List[BatchVideoRequest],
+    background_tasks: BackgroundTasks,
 ) -> BatchProcessingResponse:
     """Process multiple videos in batch."""
     job_id = f"batch_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     # Initialize job status
-    batch_jobs[job_id] = BatchProcessingResponse(
+    response = BatchProcessingResponse(
         job_id=job_id, status="processing", total_videos=len(videos)
     )
+    batch_jobs[job_id] = response
 
     # Start background processing
-    background_tasks.add_task(process_batch, job_id, videos, background_tasks)
+    background_tasks.add_task(process_batch, job_id, videos)
 
-    return batch_jobs[job_id]
+    return response
 
 
 @app.post("/batch/csv")
 async def batch_process_from_csv(
-    background_tasks: BackgroundTasks, csv_file: UploadFile = File(...)
+    background_tasks: BackgroundTasks,
+    csv_file: UploadFile = File(...),
 ) -> BatchProcessingResponse:
     """Process multiple videos from a CSV file."""
     try:
         # Read CSV file
         content = await csv_file.read()
-        csv_text = content.decode()
+        csv_text = content.decode("utf-8")
         csv_io = io.StringIO(csv_text)
         reader = csv.DictReader(csv_io)
 
@@ -385,7 +386,7 @@ async def batch_process_from_csv(
     except Exception as e:
         raise HTTPException(
             status_code=400, detail=f"Error processing CSV file: {str(e)}"
-        )
+        ) from e
 
 
 @app.get("/batch/status/{job_id}")
@@ -398,7 +399,7 @@ async def get_batch_status(job_id: str) -> BatchProcessingResponse:
 
 
 @app.get("/batch/template")
-async def get_batch_template():
+async def get_batch_template() -> FileResponse:
     """Download the batch processing CSV template."""
     if not TEMPLATE_PATH.exists():
         raise HTTPException(

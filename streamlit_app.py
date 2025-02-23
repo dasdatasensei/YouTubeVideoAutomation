@@ -10,7 +10,7 @@ import datetime
 import logging
 import time
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import pandas as pd
 import streamlit as st
@@ -208,7 +208,12 @@ if "batch_progress" not in st.session_state:
 def process_batch_videos(csv_data: pd.DataFrame) -> Dict[str, str]:
     """
     Process multiple videos from CSV data.
-    Returns a dictionary of video paths and their processing status.
+
+    Args:
+        csv_data: DataFrame containing video metadata
+
+    Returns:
+        Dict[str, str]: Dictionary of video paths and their processing status
     """
     results = {}
     total_videos = len(csv_data)
@@ -240,7 +245,7 @@ def process_batch_videos(csv_data: pd.DataFrame) -> Dict[str, str]:
             st.session_state.batch_progress["status"][input_path] = results[input_path]
 
         except Exception as e:
-            logger.error(f"Error processing {input_path}: {str(e)}")
+            logger.error("Error processing %s: %s", input_path, str(e))
             results[input_path] = f"Error: {str(e)}"
             st.session_state.batch_progress["status"][input_path] = results[input_path]
 
@@ -252,12 +257,19 @@ def estimate_processing_time(
 ) -> float:
     """
     Estimate processing time in seconds based on file size and type.
-    These are rough estimates and should be calibrated based on actual performance data.
+
+    Args:
+        file_size_mb: Size of the video file in megabytes
+        is_youtube_url: Whether the input is a YouTube URL
+
+    Returns:
+        float: Estimated processing time in seconds
     """
     # Base processing rate (MB/s) - adjust these based on actual performance
     BASE_DOWNLOAD_RATE = 2.0  # MB/s for YouTube downloads
     BASE_PROCESSING_RATE = 5.0  # MB/s for video processing
 
+    estimated_time = 0.0
     if is_youtube_url:
         # Add download time for YouTube videos
         estimated_time = file_size_mb / BASE_DOWNLOAD_RATE
@@ -271,8 +283,16 @@ def estimate_processing_time(
     return estimated_time + 10  # Add 10 seconds buffer
 
 
-def get_file_size_mb(file) -> float:
-    """Get file size in megabytes."""
+def get_file_size_mb(file: Any) -> float:
+    """
+    Get file size in megabytes.
+
+    Args:
+        file: File object with size attribute
+
+    Returns:
+        float: File size in megabytes
+    """
     if hasattr(file, "size"):
         return file.size / (1024 * 1024)
     return 100  # Default estimate for YouTube videos
@@ -282,14 +302,25 @@ def process_with_progress(
     input_path: str,
     title: str,
     description: str,
-    tags: Optional[list[str]],
+    tags: Optional[List[str]],
     publish_time: str,
     is_youtube_url: bool,
     file_size_mb: float,
 ) -> Tuple[bool, Optional[str]]:
     """
     Process video with progress tracking.
-    Returns: (success: bool, processed_file_path: Optional[str])
+
+    Args:
+        input_path: Path to video file or YouTube URL
+        title: Video title
+        description: Video description
+        tags: List of video tags
+        publish_time: Scheduled publish time
+        is_youtube_url: Whether the input is a YouTube URL
+        file_size_mb: Size of the video file in megabytes
+
+    Returns:
+        Tuple[bool, Optional[str]]: Success status and processed file path
     """
     processed_file_path = None
     try:
@@ -334,20 +365,13 @@ def process_with_progress(
 
                 # Actually process the video at the appropriate stage
                 if stage == "Processing" and i == 0:
-                    # Convert publish_time string to datetime if it's not None
-                    publish_datetime = (
-                        datetime.datetime.fromisoformat(publish_time)
-                        if publish_time
-                        else None
-                    )
-
                     # Process the video and get the processed file path
                     processed_file_path = process_video(
                         input_path=input_path,
                         title=title,
                         description=description,
                         tags=tags,
-                        publish_time=publish_datetime,
+                        publish_time=publish_time,
                         is_youtube_url=is_youtube_url,
                     )
 
@@ -371,12 +395,12 @@ def process_with_progress(
         return True, processed_file_path
 
     except Exception as e:
-        logger.error(f"Processing failed: {str(e)}")
+        logger.error("Error during processing: %s", str(e))
         st.error(f"❌ Error: {str(e)}")
         return False, processed_file_path
 
 
-def main():
+def main() -> None:
     """Main Streamlit application."""
     # Header
     st.title("🎥 YouTube Video Automation")
