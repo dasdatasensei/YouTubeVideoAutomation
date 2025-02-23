@@ -65,23 +65,23 @@
 
 ### User Guides
 
-- [Getting Started](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/getting_started.md)
+- [Getting Started](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/getting_started.md) (Coming Soon)
 - [Content Creator Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/content_creator_guide.md)
 - [Batch Processing Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/batch_processing.md)
-- [Best Practices](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/best_practices.md)
+- [Best Practices](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/best_practices.md) (Coming Soon)
 
 ### Technical Documentation
 
 - [Developer Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/developer_guide.md)
 - [Authentication Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/authentication.md)
-- [API Reference](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/api_reference.md)
-- [Architecture Overview](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/architecture.md)
+- [API Reference](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/api_reference.md) (Coming Soon)
+- [Architecture Overview](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/architecture.md) (Coming Soon)
 
 ### Templates & Examples
 
-- [Gaming Channel Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/gaming.md)
-- [Tutorial Series Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/tutorials.md)
-- [Vlog Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/vlogs.md)
+- [Gaming Channel Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/gaming.md) (Coming Soon)
+- [Tutorial Series Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/tutorials.md) (Coming Soon)
+- [Vlog Templates](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/templates/vlogs.md) (Coming Soon)
 - [Batch Processing Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/batch_processing.md)
 
 ## 🛠️ Installation
@@ -90,9 +90,9 @@
 
 Download the latest release for your platform:
 
-- [Windows Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-windows.exe)
-- [Mac Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-mac.dmg)
-- [Linux Package](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-linux.deb)
+- [Windows Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-windows.exe) (Coming Soon)
+- [Mac Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-mac.dmg) (Coming Soon)
+- [Linux Package](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-linux.deb) (Coming Soon)
 
 ### Developer Installation
 
@@ -140,11 +140,11 @@ youtube-processor process-local video.mp4 \
 youtube-processor batch-process schedule.csv
 ```
 
-See [Usage Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/usage.md) for more examples.
+See [Usage Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/docs/usage.md) (Coming Soon) for more examples.
 
 ## 🤝 Contributing
 
-We welcome contributions! See our [Contributing Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/CONTRIBUTING.md) for details.
+We welcome contributions! See our [Contributing Guide](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/CONTRIBUTING.md) (Coming Soon) for details.
 
 ### Development Setup
 
@@ -162,7 +162,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 - [FFmpeg](https://ffmpeg.org/) for video processing
 - [YouTube Data API](https://developers.google.com/youtube/v3)
-- [All Contributors](docs/CONTRIBUTORS.md)
+- [All Contributors](docs/CONTRIBUTORS.md) (Coming Soon)
 
 ## 🆘 Support
 
@@ -173,4 +173,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ---
 
-[Website](https://www.thedatasensei.com) • [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs) • [Release Notes](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/CHANGELOG.md) • [Support](mailto:jody@thedatasensei.com)
+[Website](https://www.thedatasensei.com) • [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs) • [Release Notes](https://github.com/dasdatasensei/YouTubeVideoAutomation/blob/main/CHANGELOG.md) (Coming Soon) • [Support](mailto:jody@thedatasensei.com)
