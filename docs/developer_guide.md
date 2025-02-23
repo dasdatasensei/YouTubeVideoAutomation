@@ -1,6 +1,7 @@
 # Developer Guide
 
 ## Table of Contents
+
 - [Architecture Overview](#architecture-overview)
 - [Development Environment](#development-environment)
 - [Project Structure](#project-structure)
@@ -13,9 +14,11 @@
 ## Architecture Overview
 
 ### High-Level Design
+
 ```mermaid
 graph TD
     A[CLI Interface] --> B[Core Processor]
+    A[Streamlit UI] --> B[Core Processor]
     B --> C[Video Downloader]
     B --> D[Video Processor]
     B --> E[YouTube API]
@@ -25,12 +28,15 @@ graph TD
 ```
 
 ### Key Components
+
 1. **Core Processor**: Orchestrates the workflow
 2. **Video Downloader**: Handles video acquisition
 3. **Video Processor**: Manages FFmpeg operations
 4. **YouTube API**: Handles uploads and scheduling
+5. **Streamlit UI**: User-friendly interface
 
 ### Design Principles
+
 - Clean Architecture
 - Separation of Concerns
 - Dependency Injection
@@ -40,6 +46,7 @@ graph TD
 ## Development Environment
 
 ### Prerequisites
+
 ```bash
 # Required software
 Python 3.9+
@@ -55,6 +62,7 @@ pytest
 ```
 
 ### Setup
+
 ```bash
 # Clone repository
 git clone https://github.com/yourusername/youtube-automation.git
@@ -72,6 +80,7 @@ pre-commit install
 ```
 
 ### Configuration
+
 ```python
 # config.py
 from pydantic_settings import BaseSettings
@@ -83,6 +92,7 @@ class Settings(BaseSettings):
 ```
 
 ## Project Structure
+
 ```
 youtube-automation/
 ├── src/
@@ -94,6 +104,7 @@ youtube-automation/
 │       ├── utils/              # Utility functions
 │       ├── models.py           # Data models
 │       └── cli.py             # CLI interface
+├── streamlit_app.py           # Streamlit interface
 ├── tests/                     # Test suite
 ├── docs/                      # Documentation
 └── scripts/                   # Development scripts
@@ -102,6 +113,7 @@ youtube-automation/
 ## Core Components
 
 ### Video Downloader
+
 ```python
 class VideoDownloader:
     """Handles video downloading using yt-dlp."""
@@ -111,6 +123,7 @@ class VideoDownloader:
 ```
 
 ### Video Processor
+
 ```python
 class VideoProcessor:
     """Handles video processing using FFmpeg."""
@@ -120,6 +133,7 @@ class VideoProcessor:
 ```
 
 ### YouTube API
+
 ```python
 class YouTubeAPI:
     """Handles YouTube API operations."""
@@ -135,6 +149,7 @@ class YouTubeAPI:
 ## API Reference
 
 ### Public APIs
+
 ```python
 from youtube_processor import YouTubeProcessor
 
@@ -151,6 +166,7 @@ video_id = processor.process_video(
 ```
 
 ### Error Handling
+
 ```python
 from youtube_processor.exceptions import (
     VideoProcessingError,
@@ -169,6 +185,7 @@ except VideoUploadError as e:
 ## Testing
 
 ### Running Tests
+
 ```bash
 # Run all tests
 pytest
@@ -181,6 +198,7 @@ pytest tests/test_processor.py
 ```
 
 ### Writing Tests
+
 ```python
 def test_video_processing():
     processor = VideoProcessor()
@@ -190,6 +208,7 @@ def test_video_processing():
 ```
 
 ### Mocking
+
 ```python
 @patch('youtube_processor.core.youtube_api.build')
 def test_youtube_api(mock_build):
@@ -201,6 +220,7 @@ def test_youtube_api(mock_build):
 ## Contributing
 
 ### Development Workflow
+
 1. Fork repository
 2. Create feature branch
 3. Implement changes
@@ -209,6 +229,7 @@ def test_youtube_api(mock_build):
 6. Submit pull request
 
 ### Code Style
+
 ```bash
 # Format code
 black src/ tests/
@@ -221,6 +242,7 @@ mypy src/
 ```
 
 ### Pre-commit Hooks
+
 ```yaml
 # .pre-commit-config.yaml
 repos:
@@ -233,6 +255,7 @@ repos:
 ## Release Process
 
 ### Version Bumping
+
 ```bash
 # Update version
 bumpversion patch  # or minor/major
@@ -245,6 +268,7 @@ twine upload dist/*
 ```
 
 ### Release Checklist
+
 1. Update CHANGELOG.md
 2. Run full test suite
 3. Build documentation
@@ -255,6 +279,7 @@ twine upload dist/*
 ## Advanced Topics
 
 ### Custom Extensions
+
 ```python
 class CustomProcessor(VideoProcessor):
     """Extend video processing capabilities."""
@@ -264,12 +289,14 @@ class CustomProcessor(VideoProcessor):
 ```
 
 ### Performance Optimization
+
 - Use async/await for I/O operations
 - Implement batch processing
 - Cache API responses
 - Optimize FFmpeg parameters
 
 ### Security Considerations
+
 - Secure credential storage
 - Token refresh handling
 - Rate limiting
@@ -278,12 +305,14 @@ class CustomProcessor(VideoProcessor):
 ## Troubleshooting
 
 ### Common Issues
+
 1. FFmpeg errors
 2. OAuth2 token issues
 3. API quota limits
 4. File permission problems
 
 ### Debugging
+
 ```python
 # Enable debug logging
 import logging

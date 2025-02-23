@@ -1,6 +1,8 @@
 # Credentials
 config/
 client_secrets.json
+token.json
+config/token.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

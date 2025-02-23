@@ -3,6 +3,7 @@
 Welcome to the YouTube Video Automation tool! This guide will help you streamline your video uploading process and save time managing your content.
 
 ## Table of Contents
+
 - [Getting Started](#getting-started)
 - [Basic Operations](#basic-operations)
 - [Batch Processing](#batch-processing)
@@ -16,12 +17,12 @@ Welcome to the YouTube Video Automation tool! This guide will help you streamlin
 ### First-Time Setup
 
 1. **Install the Tool**
-   - Download the installer for your system:
-     - [Windows Installer](download/windows)
-     - [Mac Installer](download/mac)
-     - [Linux Installer](download/linux)
-   - Run the installer and follow the prompts
 
+   - Download the installer for your system:
+     - [Windows Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-windows.exe)
+     - [Mac Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-mac.dmg)
+     - [Linux Installer](https://github.com/dasdatasensei/YouTubeVideoAutomation/releases/latest/download/youtube-automation-linux.deb)
+   - Run the installer and follow the prompts
 
 2. **Connect Your YouTube Account**
    - Open the application
@@ -32,6 +33,7 @@ Welcome to the YouTube Video Automation tool! This guide will help you streamlin
 ### Application Overview
 
 The tool helps you:
+
 - Add professional end screens to videos
 - Schedule uploads automatically
 - Process multiple videos at once
@@ -42,6 +44,7 @@ The tool helps you:
 ### Single Video Upload
 
 1. **Process a Local Video**
+
    ```
    Select File > Upload New Video
    Choose your video file
@@ -51,11 +54,11 @@ The tool helps you:
    ```
 
 2. **Required Information**
+
    - Video title
    - Description
    - Privacy setting (Public, Unlisted, or Private)
    - Category
-
 
 3. **Optional Settings**
    - Thumbnail
@@ -68,10 +71,10 @@ The tool helps you:
 ### Video Enhancement
 
 1. **Adding End Screens**
+
    - Default: 2-second black screen
    - Custom duration: Adjust in settings
    - Custom end screen: Upload your own
-
 
 2. **Thumbnail Processing**
    - Upload custom thumbnail
@@ -84,13 +87,14 @@ The tool helps you:
 ### Using Spreadsheets
 
 1. **Create Upload Schedule**
+
    - Use provided templates
    - Open in Excel/Google Sheets
    - Fill in video details
    - Save as CSV
 
-
 2. **Required Columns**
+
    ```
    file_path: Location of your video file
    title: Video title
@@ -109,6 +113,7 @@ The tool helps you:
 ### Channel-Specific Templates
 
 1. **Gaming Channel**
+
    ```csv
    file_path,title,description,tags,category
    gameplay.mp4,"Epic Win!","Amazing gameplay!","gaming,walkthrough",20
@@ -125,11 +130,11 @@ The tool helps you:
 ### Best Practices
 
 1. **Timing Considerations**
+
    - Schedule during peak audience times
    - Space out uploads evenly
    - Consider time zones
    - Allow processing time
-
 
 2. **Schedule Format**
    ```
@@ -141,18 +146,21 @@ The tool helps you:
 ## Common Workflows
 
 ### Gaming Channel
+
 1. Record gameplay
 2. Drop video files in designated folder
 3. Use gaming template
 4. Schedule batch upload
 
 ### Tutorial Series
+
 1. Prepare video series
 2. Use tutorial template
 3. Set sequential publish times
 4. Add custom thumbnails
 
 ### Vlog Channel
+
 1. Edit daily content
 2. Use vlog template
 3. Schedule for next day
@@ -161,18 +169,18 @@ The tool helps you:
 ## Best Practices
 
 1. **File Organization**
+
    - Use consistent naming
    - Organize by content type
    - Keep source files
    - Back up regularly
 
-
 2. **Metadata Management**
+
    - Use templates
    - Maintain tag lists
    - Write detailed descriptions
    - Include timestamps
-
 
 3. **Schedule Management**
    - Plan ahead
@@ -185,11 +193,11 @@ The tool helps you:
 ### Common Issues
 
 1. **Upload Failed**
+
    - Check internet connection
    - Verify file format
    - Ensure sufficient storage
    - Check credentials
-
 
 2. **Scheduling Issues**
    - Verify time format
@@ -198,6 +206,7 @@ The tool helps you:
    - Verify account standing
 
 ### Getting Help
+
 - Check error messages
 - Consult documentation
 - Contact support
@@ -205,10 +214,10 @@ The tool helps you:
 
 ## Support Resources
 
-- 📚 [Documentation](docs/)
-- 💬 [Community Forum](forum/)
+- 📚 [Documentation](https://github.com/dasdatasensei/YouTubeVideoAutomation/tree/main/docs)
+- 💬 [Community Forum](https://github.com/dasdatasensei/YouTubeVideoAutomation/discussions)
 - 📧 [Email Support](mailto:support@thedatasensei.com)
-- 📱 [Discord Server](discord/thedatasensei)
+- 📱 [Discord Server](https://discord.gg/thedatasensei)
 
 ---
 
